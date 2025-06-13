@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            /*agent{
+       /* stage('Build') {
+            agent{
                 docker{
                     image 'node:18-alpine'
                     reuseNode true
@@ -18,8 +18,8 @@ pipeline {
                     npm run build
                     ls -la
                 '''
-            }*/
-        }
+            }
+        }*/
         stage('Run Test'){
             parallel{
                 stage('E2E'){
