@@ -38,6 +38,11 @@ pipeline {
                                     npx playwright test --reporter=html
                                 '''
                             }
+                            post {
+                                always{
+                                    junit 'jest-results/junit.xml'
+                                }
+                              }
                         }
                 stage('Unit Test'){
                     agent{
@@ -52,14 +57,15 @@ pipeline {
                             npm test
                         '''
                     }
+                post {
+                    always{
+                        junit 'jest-results/junit.xml'
+                    }
+                    }
                 }
             }
         }
        
     }
-    post {
-        always{
-            junit 'jest-results/junit.xml'
-        }
-    }
+
 }
