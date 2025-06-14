@@ -80,7 +80,7 @@ pipeline {
                     
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
-                    echo "Site_Id= $NETLIFY_SITE_ID"
+                    echo "Site_Id = $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
                     node_modules/.bin/netlify deploy --dir=build --prod
                 '''
